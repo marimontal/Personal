@@ -1,1 +1,19 @@
+#Calculo Taxa Unitária ou Percentual
+def taxa(tipo, valor):
+  if tipo=='unitaria':
+    taxa = valor/100
+  else:
+    taxa = valor*100
+return taxa
 
+#Calculo Montante acumulado, tempo tem que ser "futuro" ou "presente"
+def montante_ac(tempo,C_ou_M,taxa,prazo):
+  fator_c = 1+taxa*prazo
+  if tempo=='futuro':
+    dinheiro = C_ou_M*fator_c
+  else:
+    dinheiro = C_ou_M*(1/fator_c)
+  return dinheiro
+  
+  
+  
