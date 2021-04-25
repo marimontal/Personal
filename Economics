@@ -1,3 +1,4 @@
+import math
 #Calculo Taxa Unitária ou Percentual
 def taxa(tipo, valor):
   if tipo=='unitaria':
@@ -6,6 +7,11 @@ def taxa(tipo, valor):
     taxa = valor*100
 return taxa
 
+#Converter cotação
+def converter_tempo(tempo_taxa,tempo_capitalização,tempo_escolhido):
+
+
+############# JUROS SIMPLES ###############
 #Calculo Montante acumulado, tempo tem que ser "futuro" ou "presente"
 def montante_ac(tempo,C_ou_M,taxa,prazo):
   fator_c = 1+taxa*prazo
@@ -15,5 +21,18 @@ def montante_ac(tempo,C_ou_M,taxa,prazo):
     dinheiro = C_ou_M*(1/fator_c)
   return dinheiro
   
+ ############ JUROS COMPOSTOS #############
+ 
+ def juros_comp(tempo,M_ou_C,taxa,prazo):
+  fator_c = (1+taxa)**prazo
+  if tempo=='futuro':
+    dinheiro = C_ou_M * fator_c #Valor futuro
+  else:
+    dinheiro = C_ou_M * (1/fator_c) #valor presente
+  return dinheiro
   
-  
+  def juros_comp_taxa(C,M,taxa):
+    prazo = math.log(M * (C**(-1))/math.log(1+taxa)
+    return prazo
+    
+ 
